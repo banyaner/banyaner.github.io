@@ -1,0 +1,51 @@
+---
+layout: post
+title: "《html5秘籍》笔记"
+date:   2015-02-03
+categories: [html,html5]
+---
+1. 《html5秘籍》书中的例子[http://www.prosetech.com/html5/]
+
+2.  Modernizr检测器: the feature detection library for HTML5/CSS3；
+
+3.  对于IE8及更早的版本，他们拒绝为无法识别的元素添加应用样式，解决办法是用js创建元素，有现在的脚本实现。只需在head部分引用
+        
+        <!--[if lt IE 9]>
+        <script src="http://html5shim.google.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+        为了防止IE弹出安全警告，需在页面头部添加“安全标志”，即可在指定元素字符编码的元数据标签的后面添加注释：
+        <!--saved from url=(0014)about:internet-->也可以使用Modernizr，它会自动解决上述问题。
+
+4. 语义元素
+\<header> 网页中可以包含多个\<header>。如果header标签中放的是图片，可在里面加一句\<h1 style="display:none">xxxxx</h1>,这样是为了遵循HTML5约定及其他原因。
+目前为了便于屏幕阅读器，站点中一般坚持使用一个\<h1>。
+
+5. 学习正则表达式 
+简单的学习：[http://tinyurl.com/jsregex]
+现成的正则表达式：[http://regexlib.com]
+精通：《精通正则表达式（第三版）》（O'Reilly）
+
+6. [http：//tinyurl.com/ployfill]中有大量JS库，有些库适用于表单验证的，如webforms2
+
+7. 最流行的富文本编辑器[http://ajaxian.com/archives/richtexteditors-compared]
+
+8. html5现成的播放器  VideoJS [http://www.videojs.com/]；jPlayer [http://www.jplayer.org/]
+
+9. 贝塞尔曲线[http://blogs.sitepointstatic.com/examples/tech/canvas-curves/bezier-curve.html]
+绘图的导出工具[http://visitmix.com/work/ai2canvas/]
+
+10. 字体 [http://www.fontsquirrel.com/fonts]（@font-face先注册）；[http://www.google.com/fonts/]（直接把地址link到head）
+转换字体格式[http://www.fontsquirrel.com/tools/webfont-generator]
+
+[http：//tinyurl.com/ployfill]:http：//tinyurl.com/ployfill
+[http://www.prosetech.com/html5/]:http://www.prosetech.com/html5/
+[http://tinyurl.com/jsregex]:http://tinyurl.com/jsregex
+[http://regexlib.com]:http://regexlib.com
+[http：//tinyurl.com/ployfill]:http：//tinyurl.com/ployfill
+[http://www.videojs.com/]:http://www.videojs.com/
+[http://www.jplayer.org/]:http://www.jplayer.org/
+[http://blogs.sitepointstatic.com/examples/tech/canvas-curves/bezier-curve.html]:http://blogs.sitepointstatic.com/examples/tech/canvas-curves/bezier-curve.html
+[http://www.fontsquirrel.com/fonts]:http://www.fontsquirrel.com/fonts
+[http://www.google.com/fonts/]:http://www.google.com/fonts/
+[http://www.fontsquirrel.com/tools/webfont-generator]:http://www.fontsquirrel.com/tools/webfont-generator
+[http://ajaxian.com/archives/richtexteditors-compared]:http://ajaxian.com/archives/richtexteditors-compared
