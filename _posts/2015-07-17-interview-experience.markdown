@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "面试总结"
+title:  "前端面试总结"
 date:   2015-07-17 
 categories: front-page
 ---
