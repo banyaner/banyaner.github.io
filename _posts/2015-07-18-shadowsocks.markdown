@@ -2,7 +2,7 @@
 layout: post
 title:  "windows使用shadowsocks翻墙"
 date:   2015-07-18 
-categories: tool
+categories: tools
 ---
 1.下载[shasowsocks] 
 

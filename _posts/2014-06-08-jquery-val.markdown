@@ -2,7 +2,7 @@
 layout: post
 title:  "代码调试"
 date:   2014-07-20
-categories: [javascript,jquery]
+categories: [javascript, tools]
 ---
 [Chrome 中的 JavaScript 断点设置和调试技巧]
 

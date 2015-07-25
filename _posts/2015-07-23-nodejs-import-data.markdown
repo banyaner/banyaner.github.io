@@ -2,7 +2,7 @@
 layout: post
 title:  "使用excel内数据更新PostgreSQL数据库"
 date:   2015-07-23 
-categories: nodejs
+categories: [javascript, nodejs]
 ---
 - 1.将excel文件存储为.csv格式，本例中文件为（information-baike.csv）。
 - 2.使用记事本打开information-baike.csv，存储为utf-8编码
@@ -40,6 +40,7 @@ client.end();
 {% endhighlight %}
 
 **补充**：
+
 1.使用'UPDATE c_core_adminbdy SET baike_id=$1,summary=$2 WHERE id=$3',[bkId,summary,id]写法是为了避免sql注入以及内容中的双引号/单引号引起语句执行错误
 
 2.\n 软回车：在Windows 中表示换行且回到下一行的最开始位置。相当于Mac OS 里的 \r 的效果。在Linux、unix 中只表示换行，但不会回到下一行的开始位……

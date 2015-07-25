@@ -2,7 +2,7 @@
 layout: post
 title: "《html5秘籍》笔记"
 date:   2015-02-03
-categories: [html,html5]
+categories: [html]
 ---
 1. 《html5秘籍》书中的例子[http://www.prosetech.com/html5/]
 

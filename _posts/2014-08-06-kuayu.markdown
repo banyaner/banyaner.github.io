@@ -2,7 +2,7 @@
 layout: post
 title:  "(转载)js中几种实用的跨域方法原理详解"
 date:   2014-08-06 
-categories: jsonp
+categories: javascript
 ---
 这里说的js跨域是指通过js在不同的域之间进行数据传输或通信，比如用ajax向一个不同的域请求数据，或者通过js获取页面中不同域的框架中(iframe)的数据。只要协议、域名、端口有任何一个不同，都被当作是不同的域。
 下表给出了相对http://store.company.com/dir/page.html同源检测的结果:

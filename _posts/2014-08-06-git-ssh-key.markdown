@@ -2,7 +2,7 @@
 layout: post
 title:  "git ssh key"
 date:   2014-08-06 
-categories: jekyll 
+categories: [jekyll, git]
 ---
 一 设置git的user name和email：
 {% highlight ruby %}

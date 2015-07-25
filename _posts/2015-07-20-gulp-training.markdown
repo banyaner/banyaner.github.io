@@ -2,7 +2,7 @@
 layout: post
 title:  "(转载)gulp教程"
 date:   2015-07-20 
-categories: tool
+categories: [tools, Gulp]
 ---
 [原文地址]/[翻译出处]
 相关参考：[gulpjs教程] 
