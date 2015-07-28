@@ -215,9 +215,8 @@ AJAX
 
 <b>如果请求不改变服务器状态指示返回数据，应该使用GET。GET请求会被缓存，如果多次提取相同的数据会提高性能</b>
 而当URL和请求的参数长度超过2048个字符的时候才使用POST提取数据
-[POST和GET请求的区别]
+[(POST和GET请求的区别)]
 
-<img src="https://github.com/banyaner/banyaner.github.io/blob/master/img/GetAndPost.png?raw=true">
 
 ###多部分XHR（MXHR）
 
@@ -251,5 +250,6 @@ HTML：无需解析，数据冗长
 使用原声方法，因为他们是C++写的
 文件预处理，压缩（gzip）、合并、uglify
 尝试CDN
-[POST和GET请求的区别]:http://banyaner.github.io/fe/2015/07/28/PostAndGet.html
+
+[(POST和GET请求的区别)]:http://banyaner.github.io/fe/2015/07/28/PostAndGet.html
 [(json和jsonp的区别)]:http://banyaner.github.io/fe/2015/07/28/JsonAndJsonp.html
