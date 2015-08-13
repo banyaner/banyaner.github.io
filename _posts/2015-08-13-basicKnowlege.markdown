@@ -23,6 +23,7 @@ iOS 4.0+ 使用英文字体 Helvetica Neue，之前的iOS版本降级使用 Helv
 #### 基础交互
 
 设置全局的CSS样式，避免图中的长按弹出菜单与选中文本的行为
+
 <pre>
 a, img {
     -webkit-touch-callout: none; /* 禁止长按链接与图片弹出菜单 */
