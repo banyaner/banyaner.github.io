@@ -1,0 +1,68 @@
+---
+layout: post
+title:  "sublime中常用插件及常规设置"
+date:   2015-08-19
+categories: install
+---
+
+每次换电脑的时候都需要重新找一下sublime的插件及安装方法，所以决定把常用的插件及设置方式总结下。
+
+###一、安装install  package
+
+自动安装：
+
+1、通过快捷键 ctrl+` 或者 View > Show Console 菜单打开控制台
+
+2、粘贴对应版本的代码后回车安装
+
+适用于 Sublime Text 3：
+
+{%highlight ruby%}
+import  urllib.request,os;pf='Package Control.sublime-package';ipp=sublime.installed_packages_path();urllib.request.install_opener(urllib.request.build_opener(urllib.request.ProxyHandler()));open(os.path.join(ipp,pf),'wb').write(urllib.request.urlopen('http://sublime.wbond.net/'+pf.replace(' ','%20')).read())
+{% endhighlight %}
+
+适用于 Sublime Text 2：
+{%highlight ruby%}
+import  urllib2,os;pf='Package Control.sublime-package';ipp=sublime.installed_packages_path();os.makedirs(ipp)ifnotos.path.exists(ipp)elseNone;urllib2.install_opener(urllib2.build_opener(urllib2.ProxyHandler()));open(os.path.join(ipp,pf),'wb').write(urllib2.urlopen('http://sublime.wbond.net/'+pf.replace(' ','%20')).read());print('Please restart Sublime Text to finish installation')
+{% endhighlight %}
+
+###二、安装常用插件
+ "ctrl+alt+p"调出控制台；输入install package 按下回车，可以进行插件的选择和安装。常用的插件如下：
+
+ 1. Emmet
+ * Emmet 是一个前端开发的利器，其前身是 Zen Coding。它让编写 HTML 代码变得简单。Emmet 的基本用法是：输入简写形式，然后按 Tab 键。
+ 2. Bracket​Highlighter
+* Bracket​Highlighter 是一个括号、引号、标签高亮插件，支持 []、()、{}、""、'' 和 <tag></tag> 等，比 Sublime Text 自带的高亮要明显得多。
+3. SASS Build (GitHub)
+* SASS Build 是一个编写CSS的预处理器。这个特别的插件将帮助你妥善构建包括压缩选项在内的SASS文件。一旦你安装了这个插件，你可以很容易地通过按 Ctrl+ B（MAC系统是 Command +B）来启动它。
+4. PackageResourceViewer
+* 通过这个特殊的插件，会给你查看和编辑SublimeText附带的不同的包带来很多方便。您也可以提取任何给定的包。这一行动将其复制到用户文件夹，以便您可以安全地对其进行编辑。(打开包的方式是ctrl+alt+p,输入PackageResourceViewer，然后选择要管理的包)
+5. CSSComb
+* 这是用来给CSS属性进行排序的格式化插件。如果你想保持的代码干净整洁，并且希望按一定的顺序排列，那么这个插件是一种有效解决的方案。特别是当你和其他有自己代码编写风格的开发者一同协作的时候。（需要nodejs支持）
+6. less
+* 系统自带的less2css插件安装比较麻烦，同时，该插件的安装需要nodejs支持，还需要安装lessc。我在git上发现一个比较好的插件，安装也很简单。地址是：[https://github.com/yswang0927/lessc]
+7. html/css/js prettify
+* 一款格式化的插件。对于代码格式规范化很有帮助。需要设置indent-size：2
+8. view in browser
+*　安装该插件后，用户保存好html页面后。右击选择open in browser
+9.Autoprefixer
+* 这是一款CSS3私有前缀自动补全插件。该插件使用CanIUse资料库，能精准判断哪些属性需要什么前缀与CssComb插件一样，该插件也需要系统已安装Node.js环境
+使用方法：在输入CSS3属性后（冒号前）按Tab键
+
+###三、自定义快捷方式
+
+在sublime 中用户可以自定义快捷键。例如，我经常用到在浏览器中打开html页面，我可以为这个操作设置一个快捷键。（首先得安装上插件view in browser）
+具体设置方法：
+
+点击　preference-Key Bindings-user，在空白页面输入如下代码：
+{% highlight ruby %}
+[
+		{ "keys": ["ctrl+shift+enter"], "command": "open_in_browser" }
+]
+{% endhighlight %}
+（这里的快捷键用户可以自己选择）
+
+###四、补充
+由于tab键在不同环境下解析结果不同，会让代码结构变乱，一般使用２个空格来代替一个tab。在sublime中设置方式是：点击右下角的spaces,选择Indent Using Spaces和Tab Width：2。或者点击view-indentation进行设置
+
+[https://github.com/yswang0927/lessc]:https://github.com/yswang0927/lessc
