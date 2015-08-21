@@ -33,8 +33,6 @@ body {
     -webkit-text-size-adjust: 100%;
 }
 
-
-
 /**
  * Set `margin-bottom` to maintain vertical rhythm
  */
@@ -130,6 +128,13 @@ blockquote {
     }
 }
 
+.highlight{
+    margin:10px;
+}
+.post-content h3{
+    color:rgb(218, 119, 48);
+    margin:10px;
+}
 
 
 /**

@@ -44,8 +44,8 @@ import  urllib2,os;pf='Package Control.sublime-package';ipp=sublime.installed_pa
 7. html/css/js prettify
 * 一款格式化的插件。对于代码格式规范化很有帮助。需要设置indent-size：2
 8. view in browser
-*　安装该插件后，用户保存好html页面后。右击选择open in browser
-9.Autoprefixer
+* 安装该插件后，用户保存好html页面后。右击选择open in browser
+9. Autoprefixer
 * 这是一款CSS3私有前缀自动补全插件。该插件使用CanIUse资料库，能精准判断哪些属性需要什么前缀与CssComb插件一样，该插件也需要系统已安装Node.js环境
 使用方法：在输入CSS3属性后（冒号前）按Tab键
 
