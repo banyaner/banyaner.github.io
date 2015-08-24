@@ -63,6 +63,28 @@ import  urllib2,os;pf='Package Control.sublime-package';ipp=sublime.installed_pa
 （这里的快捷键用户可以自己选择）
 
 ###四、补充
-由于tab键在不同环境下解析结果不同，会让代码结构变乱，一般使用２个空格来代替一个tab。在sublime中设置方式是：点击右下角的spaces,选择Indent Using Spaces和Tab Width：2。或者点击view-indentation进行设置
+由于tab键在不同环境下解析结果不同，会让代码结构变乱，一般使用２个空格来代替一个tab。在sublime中设置方式是：点击右下角的spaces,选择Indent Using Spaces和Tab Width：2。或者点击view-indentation进行设置。
+
+在编写的代码的时候需要用到的一些样式我们可以写在preferences-> Setting-User里。
+我目前使用的是
+{%highlight ruby%}
+{
+"default_encoding": "UTF-8",
+"draw_white_space": "all",
+"font_size": 12,
+"highlight_line": true,
+"ignored_packages":
+[
+"Vintage"
+],
+"rulers":
+[
+80
+],
+"translate_tabs_to_spaces": true,
+"trim_trailing_white_space_on_save": true,
+"word_wrap": true
+}
+{%endhighlight%}
 
 [https://github.com/yswang0927/lessc]:https://github.com/yswang0927/lessc
