@@ -1,125 +1,35 @@
 ---
 layout: post
-title:  "EUI入门一点心得"
-date:   2016-04-27
-categories: [Egret, 游戏]
+title:  "使用jquery创建新元素的最好方式"
+date:   2016-01-14
+categories: [js]
 ---
 
-
-本学习经验属于自行研究，很多应该不是最优解，所以先写下来给自己参考吧。
-
-文中的代码均来自所做的第一个游戏
-**磨人的小方块。（**后期添加代码链接，注意删除公司的一些公有库**）**游戏所有界面如图所示。
-![所以界面整合.jpg](quiver-image-url/00AB123215182D4528DC86F5AEA7121A.jpg)
-###1.游戏全局要使用的唯一值得变量，单独定于在一个类中，方便在全局设置和读取。
-例如：
-
-class Settings{
-    public static BestScore = 100;
-    public static TotalScore = 0;
-    public static CurrentScore = 0;
-    public static Stage_width = 750;
-    public static MusicPlay = !0;
-    public static times = 3;//抽奖次数
-    public static rank = [];//{rank:"1",nickName:"dddd",scoreRecord:"200",avator:"resource/assets/player.png"}
-    public static passport: any;//登录状态
-    public static myScoreInfo:any;
-}
-
-###2.自定义事件
-游戏中用到场景切换或者一个变量随另一个变量而变化的例子，可以使用自定义事件。
-例如，本事件中需要在首页、游戏页、抽奖、排行榜三个页面进行切换。我们可以定义一个消息，在事件发生的时候发送，另一端监听。
-先定义一个监听变量：
-
-
-class Messages {
-    public static CHANGE_SCENE = 'change-scene';
-}
-再定于一个派发事件MessageCenter。为单例模式，确保唯一性。
-
-class MessageCenter extends egret.EventDispatcher {
-
-    private static _instance: MessageCenter;
-
-    public constructor() {
-        if(MessageCenter._instance) {
-            throw new Error("MessageCenter为单例模式，请使用 MessageCenter.getInstance()获取实例！");
-        }
-        super();
-    }
-    public static getInstance(): MessageCenter {
-        if(this._instance == null) {
-            this._instance = new MessageCenter();
-        }
-        return this._instance;
-    }
-
-    public sendMessage(message: string,data?: any): void {
-        var event = new egret.Event(message);
-        event.data = data;
-        this.dispatchEvent(event);
-    }
-}
-
-
-游戏中用户点击抽奖按钮时要跳转到抽奖页面，所以在此添加事件派发
-
-
-private tap_lottery() {
-        console.log("抽奖");
-       MessageCenter.getInstance().sendMessage(Messages.CHANGE_SCENE,{ sceneType: 'lottery'});
-    }
-
-在主函数中监听这个事件，并实现跳转
-
-protected startCreateScene(): void {
-        this.changeScene('main');
-        MessageCenter.getInstance().addEventListener(Messages.CHANGE_SCENE, this.onChangeScene, this);
-    }
-    private changeScene(sceneType: any): void {
-        var scene,title;
-        switch(sceneType) {
-            case 'lottery':
-                scene = LotteryUI.getInstance();
-                title = '抽奖';
-                break;
-            case 'game':
-            scene=new Games();
-                title = '游戏';
-                break;
-            case 'rank':
-                scene = new Rank();
-                title = '排行榜';
-                break;
-            case 'main':
-            default:
-                scene = HomeUI.getInstance();
-                title = '首页';
-        }
-        this.removeChildren();
-        this.addChild(scene);
-    }
-
-
-有些exml中label的值是由后端决定的。所以可以在对应的类中写个set（）函数，将类写成单例模式。然后在请求成功的处理函数中进行设置。（而无需new一个类。类中的函数是在类的实例上进行引用）。简单点的方法是，label的值由静态变量赋值。
-
-###关于调试
-PC端可以使用console进行调试。移动端目前没有一个简单统一的方法。egret提供了一种控制面板输出，方便调试者开发。
-使用方法：
-将index.html中
-`
-data-show-log="true"//设置是否在屏幕中显示日志
-`
-data-log-filter=”{regular expression}”
-
-    设置一个正则表达式过滤条件，日志文本匹配这个正则表达式的时候才显示这条日志。
-    如 `data-log-filter="^egret"` 表示仅显示以 `egret` 开头的日志。
-
-输出日志
-
-在代码中可以直接调用 egret.log(message?:any, ...optionalParams:any[]) 来输出日志。
-在DEBUG模式下，日志会被绘制到屏幕的日志输出面板，在发行版中会直接调用系统的 console 来输出日志。
-在发行版生成过程中，Egret 命令行会移除 if(DEBUG){ ... } 这一整个代码块，保持发行版包体的精简。
-
-Egret 还提供了另外一个与 DEBUG 对应的编译参数 RELEASE，用来编写只在发行版中运行的代码。
-（貌似只有egret.log()输出的内容才会显示在面板上）
+  我使用一个对象来放置使用jquery进行 create、append、remove 的新新元素
+```js
+var el = {
+    newDiv : $("<div>", {class: "container", id: "div1", align: "center", "text":"div中的内容"}),
+    newImg : $("<img>", {class: "profile-image", id: "newImg", src: "path/to/img"}),
+    newAnchor : $("<a>", {class: "link", id: "newAnchor"})
+};
+```
+这里创建了一个el对象放置新元素，以便在代码中更方便使用。
+###append元素
+```js
+el.newImg.appendTo(newDiv);
+el.newAnchor.appendTo(newDiv);
+el.newDiv.appendTo("body");
+```
+以上代码会将a表情和img放在div内，div放入body内。
+###修改新元素css
+```js
+el.newDiv.css({
+    "display" : "block",
+    "position" : "relative",
+});
+```
+###删除新元素
+```js
+el.newImg.remove();
+el.newAnchor.remove();
+```
